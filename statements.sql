@@ -75,11 +75,10 @@
 -- Tu respuesta aquí: SELECT edad, GROUP_CONCAT(nombre,' ', apellido) AS usuarios_con_la_misma_edad FROM usuarios_lenguajes GROUP BY edad HAVING COUNT(id_usuario) > 1;
 
 -- Ejercicio 26: Encontrar el usuario con el lenguaje con mayor número de carácteres y que tenga una edad menor de 30 años. 
--- Tu respuesta aquí: 
-
+-- Tu respuesta aquí: SELECT lenguaje, LENGTH(lenguaje) AS longitud FROM usuarios_lenguajes WHERE edad < 30 ORDER BY longitud DESC LIMIT 1;
 
 -- Ejercicio 27: Seleccionar los usuarios que tienen al menos un lenguaje asociado y mostrar sus emails.
--- Tu respuesta aquí
+-- Tu respuesta aquí:SELECT id_usuario, email FROM usuarios_lenguajes as a WHERE EXISTS (SELECT 1 FROM usuarios_lenguajes as b WHERE a.id_usuario = b.id_usuario);
 
 
 -- Ejercicio 28: Contar cuántos usuarios tienen un apellido que comienza con la letra 'G'.
